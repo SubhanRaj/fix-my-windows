@@ -20,8 +20,14 @@ if errorlevel 1 (
 
 :SkipCleanmgr
 echo.
-echo [3/3] Running live disk scan (CHKDSK)...
+echo [3/3] Scheduling live disk scan (CHKDSK)...
 chkdsk C: /scan
 
+echo.
 echo === DISK MAINTENANCE COMPLETE ===
+echo NOTE: CHKDSK /scan schedules a scan for the NEXT SYSTEM REBOOT.
+echo The scan will run automatically and may take 10-30 minutes on next boot.
+echo To skip the scan at next reboot, press any key during the boot countdown.
+echo.
 pause
+
