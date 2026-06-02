@@ -44,7 +44,7 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Downloading x64 Redistributable...
-curl -L -o "%TEMP%\vc_redist.x64.exe" "https://aka.ms/vc14/vc_redist.x64.exe"
+powershell -ExecutionPolicy Bypass -Command "(New-Object Net.ServicePointManager).SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object Net.WebClient).DownloadFile('https://aka.ms/vc14/vc_redist.x64.exe', '%TEMP%\vc_redist.x64.exe')" >nul 2>&1
 if %errorlevel% neq 0 (
     echo ERROR: Failed to download x64 redistributable. Check your internet connection.
     pause
@@ -56,7 +56,7 @@ del "%TEMP%\vc_redist.x64.exe" >nul 2>&1
 
 echo.
 echo Downloading x86 Redistributable...
-curl -L -o "%TEMP%\vc_redist.x86.exe" "https://aka.ms/vc14/vc_redist.x86.exe"
+powershell -ExecutionPolicy Bypass -Command "(New-Object Net.ServicePointManager).SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object Net.WebClient).DownloadFile('https://aka.ms/vc14/vc_redist.x86.exe', '%TEMP%\vc_redist.x86.exe')" >nul 2>&1
 if %errorlevel% neq 0 (
     echo ERROR: Failed to download x86 redistributable. Check your internet connection.
     pause
