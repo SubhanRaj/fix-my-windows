@@ -28,7 +28,15 @@ fix-my-windows/
     ├── 4_printer_suite.bat       # Spooler reset + Print to PDF enablement
     ├── 5_update_reset.bat        # Windows Update cache reset
     ├── 6_runtimes_installer.bat  # .NET Framework 3.5 & VC++ Redistributables installer
-    ├── 7_sys_info.bat            # Hardware/battery info expor
+    ├── 7_sys_info.bat            # Hardware/battery info exporter (auto-opens Reports)
+    └── 8_reboot.bat              # Deep kernel cold boot (bypass Fast Startup)
+```
+
+## How to Use
+1. Download or clone this repository to your local machine or a USB drive.
+2. Double-click `Start_Menu.bat`.
+3. Accept the UAC prompt for Administrator privileges.
+4. Select the module you want to run from the interactive menu.
 
 ## Module Reference
 
@@ -41,15 +49,7 @@ fix-my-windows/
 | **[5] Update Reset** | (Placeholder module—customize as needed for Windows Update troubleshooting) |
 | **[6] Runtimes** | Sub-menu to enable .NET Framework 3.5 or download/install latest Visual C++ Redistributables (x86 & x64). |
 | **[7] System Info** | Exports PC name, serial number, OS version, and IP config to `/Reports` folder; generates battery health report. Auto-opens Reports in Explorer. |
-| **[8] Deep Reboot** | Forces immediate system restart with confirmation prompt. Closes all applications and bypasses Fast Startup. |ter (auto-opens Reports)
-    └── 8_reboot.bat              # Deep kernel cold boot (bypass Fast Startup)
-```
-
-## How to Use
-1. Download or clone this repository to your local machine or a USB drive.
-2. Double-click `Start_Menu.bat`.
-3. Accept the UAC prompt for Administrator privileges.
-4. Select the module you want to run from the interactive menu.
+| **[8] Deep Reboot** | Forces immediate system restart with confirmation prompt. Closes all applications and bypasses Fast Startup. |
 
 ## Development Note (Mac / Linux Users)
 If you are contributing to this repository using VS Code on macOS or Linux, **ensure your line endings are set to CRLF**. Saving batch files with LF line endings will break the `goto` labels in the Windows Command Prompt.
