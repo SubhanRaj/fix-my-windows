@@ -1,0 +1,10 @@
+# Set default behavior to auto
+* text=auto
+
+# Force batch files to ALWAYS use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Force standard text files to use LF
+*.md text eol=lf
+.gitignore text eol=lf
