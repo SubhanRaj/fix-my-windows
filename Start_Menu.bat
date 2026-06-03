@@ -5,11 +5,16 @@ COLOR 0B
 :: Elevate to Admin
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    goto :MainMenu
+    goto :UnblockFiles
 ) else (
     powershell -Command "Start-Process '%~dpnx0' -Verb RunAs"
     exit /b
 )
+
+:UnblockFiles
+:: Strip the "Mark of the Web" to prevent silent execution blocks on modules
+powershell -Command "Get-ChildItem -Path '%~dp0' -Recurse -File | Unblock-File" >nul 2>&1
+goto :MainMenu
 
 :MainMenu
 cls
