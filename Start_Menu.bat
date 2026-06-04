@@ -14,6 +14,10 @@ if %errorLevel% == 0 (
 :UnblockFiles
 :: Strip the "Mark of the Web" to prevent silent execution blocks on modules
 powershell -Command "Get-ChildItem -Path '%~dp0' -Recurse -File | Unblock-File" >nul 2>&1
+
+:: FIX: Force the elevated prompt back to the script's actual directory
+cd /d "%~dp0"
+
 goto :MainMenu
 
 :MainMenu
