@@ -48,7 +48,19 @@ fix-my-windows/
 
 ```
 
-## How to Use
+## Quick Start Deployment
+Run this toolkit directly from the internet on any client PC with zero installation. Open **PowerShell as Administrator** and paste the appropriate command below:
+
+**For Windows 10 & 11:**
+`irm https://fix-my-windows.pages.dev/run.ps1 | iex`
+
+**For Windows 7 & 8.1 (Legacy Fallback):**
+`[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iex ((New-Object Net.WebClient).DownloadString('https://fix-my-windows.pages.dev/run.ps1'))`
+
+---
+
+## Local / USB Usage
+If you are deploying offline or via a flash drive:
 1. Download or clone this repository to your local machine or a USB drive.
 2. Double-click `Start_Menu.bat`.
 3. Accept the UAC prompt for Administrator privileges.
