@@ -2,8 +2,12 @@
 echo.
 echo === RUNNING DISK MAINTENANCE ===
 
-echo [1/3] Clearing Temp folders...
-del /q /f /s "%TEMP%\*" >nul 2>&1
+echo [1/3] Clearing Temp folders (Protecting active deployment)...
+
+:: Safely clear User Temp while explicitly ignoring the fix-my-windows files
+powershell -NoProfile -Command "Get-ChildItem -Path $env:TEMP -Exclude 'fmw-deploy', 'fmw.zip' | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue" >nul 2>&1
+
+:: Windows System Temp is safe to wipe blindly
 del /q /f /s "C:\Windows\Temp\*" >nul 2>&1
 
 echo.
@@ -12,11 +16,10 @@ echo WARNING: This process will permanently empty the Recycle Bin,
 echo DirectX caches, and old Windows Update files.
 choice /c YN /m "Do you want to run Deep Cleanup? (Y=Yes, N=Skip): "
 if errorlevel 2 goto :SkipCleanmgr
-if errorlevel 1 (
-    echo.
-    echo Running Silent Disk Cleanup... Please wait.
-    cleanmgr.exe /d c: /verylowdisk
-)
+
+echo.
+echo Running Silent Disk Cleanup... Please wait.
+cleanmgr.exe /d c: /verylowdisk
 
 :SkipCleanmgr
 echo.
@@ -30,4 +33,3 @@ echo The scan will run automatically and may take 10-30 minutes on next boot.
 echo To skip the scan at next reboot, press any key during the boot countdown.
 echo.
 pause
-
