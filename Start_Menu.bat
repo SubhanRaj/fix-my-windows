@@ -97,15 +97,17 @@ echo [I] USB Controller Reset
 echo [J] Display Settings Reset
 echo [K] Bluetooth Troubleshooter
 echo [L] UAC ^& Security Integrity Check
+echo [M] SPPSVC Malware Repair (Error 577)
 echo.
 echo === SYSTEM CONTROL ===
-echo [M] Deep System Reboot
+echo [N] Deep System Reboot
 echo.
-choice /c HIJKLMPQ /n /m "Select (H-M) [P]revious or [Q]uit: "
+choice /c HIJKLMNPQ /n /m "Select (H-N) [P]revious or [Q]uit: "
 
-if errorlevel 8 goto :EOF
-if errorlevel 7 goto :MainMenu2
-if errorlevel 6 call ".\modules\22_reboot.bat" & goto :MainMenu3
+if errorlevel 9 goto :EOF
+if errorlevel 8 goto :MainMenu2
+if errorlevel 7 call ".\modules\22_reboot.bat" & goto :MainMenu3
+if errorlevel 6 call ".\modules\23_sppsvc_repair.bat" & goto :MainMenu3
 if errorlevel 5 call ".\modules\22_uac_integrity.bat" & goto :MainMenu3
 if errorlevel 4 call ".\modules\21_bluetooth_reset.bat" & goto :MainMenu3
 if errorlevel 3 call ".\modules\20_display_reset.bat" & goto :MainMenu3
