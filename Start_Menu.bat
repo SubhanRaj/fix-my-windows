@@ -103,20 +103,24 @@ echo === NETWORKING ^& SHARING ===
 echo [N] Network ^& File Sharing Setup
 echo [O] Wi-Fi Profile Manager ^& Key Extractor
 echo [T] Application Firewall Manager
+echo [W] DNS Fast-Switcher ^& Hosts Manager
 echo.
 echo === SYSTEM CONTROL ^& RECOVERY ===
 echo [U] Create WinPE Rescue USB
+echo [V] Hardware Monitor (Portable / Install)
 echo [R] Advanced Boot (Safe Mode Toggle)
 echo [S] Deep System Reboot
 echo.
 :: Note: P=Previous, Q=Quit. Do not use them for modules.
-choice /c HIJKLMNOTURSPQ /n /m "Select (H-S, U) [P]revious or [Q]uit: "
+choice /c HIJKLMNOTWUVRS PQ /n /m "Select (H-W) [P]revious or [Q]uit: "
 
-if errorlevel 14 goto :EOF
-if errorlevel 13 goto :MainMenu2
-if errorlevel 12 call ".\modules\22_reboot.bat" & goto :MainMenu3
-if errorlevel 11 call ".\modules\26_safe_mode.bat" & goto :MainMenu3
-if errorlevel 10 call ".\modules\28_winpe_usb_creator.bat" & goto :MainMenu3
+if errorlevel 16 goto :EOF
+if errorlevel 15 goto :MainMenu2
+if errorlevel 14 call ".\modules\22_reboot.bat" & goto :MainMenu3
+if errorlevel 13 call ".\modules\26_safe_mode.bat" & goto :MainMenu3
+if errorlevel 12 call ".\modules\29_hardware_monitor.bat" & goto :MainMenu3
+if errorlevel 11 call ".\modules\28_winpe_usb_creator.bat" & goto :MainMenu3
+if errorlevel 10 call ".\modules\30_dns_manager.bat" & goto :MainMenu3
 if errorlevel 9 call ".\modules\27_firewall_manager.bat" & goto :MainMenu3
 if errorlevel 8 call ".\modules\25_wifi_manager.bat" & goto :MainMenu3
 if errorlevel 7 call ".\modules\24_network_sharing.bat" & goto :MainMenu3
