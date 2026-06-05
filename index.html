@@ -186,80 +186,220 @@
             </div>
         </div>
 
-        <div class="max-w-5xl mx-auto border-t border-cli-700 pt-16 mb-16">
+        <div class="max-w-6xl mx-auto border-t border-cli-700 pt-16 mb-16">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4">30 Powerful Modules</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">33 Powerful Modules</h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    A paginated, auto-elevating CLI menu designed to target specific system failures, from basic UAC
-                    integrity to deep file-infector malware and offline bootloader recovery.
+                    A comprehensive, interactive toolkit designed to target specific system failures without unnecessary
+                    bloat.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2 border-b border-cli-700 pb-2">
-                        <span class="bg-cli-800 text-cli-blue text-xs py-1 px-2 rounded">PAGE 1</span>
-                        Core Repair & Audit
-                    </h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>OS
-                                Repair:</strong> SFC / DISM restoration</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Network
-                                Safe:</strong> DNS & Winsock reset</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Disk
-                                Clean:</strong> Temp purge & CHKDSK</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Printer
-                                Suite:</strong> Spooler reset & Ghost clean</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Update
-                                Reset:</strong> Clear Win Update cache</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
-                            <strong>Runtimes:</strong> .NET 3.5 & VC++ installers</li>
-                    </ul>
+            <!-- Bento Box Module Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Core Repair -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
+                        </svg>
+                        <h3 class="text-white font-bold">Core System Repair</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">SFC
+                            & DISM Repair</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Temp
+                            Purge</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">WinUpdate
+                            Cache</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Printer
+                            Spooler</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">.NET
+                            & VC++ Runtimes</span>
+                    </div>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2 border-b border-cli-700 pb-2">
-                        <span class="bg-cli-800 text-cli-blue text-xs py-1 px-2 rounded">PAGE 2</span>
-                        Deep Diagnostics
-                    </h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>RAM
-                                Test:</strong> Windows Memory Diagnostic</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Registry
-                                Backup:</strong> Full HKLM/HKCU export</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>License
-                                Status:</strong> Activation audit</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Audio
-                                Reset:</strong> Restart drivers & services</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Event
-                                Viewer:</strong> Export 24h critical errors</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Scheduled
-                                Tasks:</strong> Non-destructive audit</li>
-                    </ul>
+                <!-- Networking -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            <path d="M3.6 9h16.8" />
+                            <path d="M3.6 15h16.8" />
+                            <path d="M11.5 3a17 17 0 0 0 0 18" />
+                            <path d="M12.5 3a17 17 0 0 1 0 18" />
+                        </svg>
+                        <h3 class="text-white font-bold">Network & Web</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Safe
+                            Network Reset</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">DNS
+                            Fast-Switcher</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Wi-Fi
+                            Key Extractor</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Local
+                            Share Setup</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">App
+                            Firewall GUI</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Browser
+                            Cache Rescue</span>
+                    </div>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2 border-b border-cli-700 pb-2">
-                        <span class="bg-cli-800 text-cli-blue text-xs py-1 px-2 rounded">PAGE 3</span>
-                        Hardware, Net & Recovery
-                    </h4>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>SPPSVC
-                                Repair:</strong> Fix Error 577 malware</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Wi-Fi
-                                Manager:</strong> Export plaintext keys</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
-                            <strong>Firewall/DNS:</strong> Rules & fast-switch</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Safe
-                                Mode:</strong> Advanced Boot toggle</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>WinPE
-                                Rescue:</strong> Create offline USB tool</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>System
-                                Monitor:</strong> Cloud-fetch LibreHW</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
-                            <strong>Resets:</strong> GPU, USB, UAC & Displays</li>
-                    </ul>
+                <!-- Hardware & Peripherals -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" />
+                            <path d="M7 20h10" />
+                            <path d="M9 16v4" />
+                            <path d="M15 16v4" />
+                        </svg>
+                        <h3 class="text-white font-bold">Hardware & Drivers</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">GPU
+                            / DirectX Reset</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">USB
+                            Controller Refresh</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Display
+                            Defaults</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Bluetooth
+                            Troubleshooter</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Audio
+                            Driver Reset</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">NTP
+                            / NIC Time Sync</span>
+                    </div>
                 </div>
+
+                <!-- Security & Debloat -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
+                        </svg>
+                        <h3 class="text-white font-bold">Security & Debloat</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">SPPSVC
+                            Malware Fix</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">OEM
+                            & Appx Cleaner</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Telemetry
+                            Stripper</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">UAC
+                            Integrity Check</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Defender
+                            Audit</span>
+                    </div>
+                </div>
+
+                <!-- Diagnostics & Logs -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                        </svg>
+                        <h3 class="text-white font-bold">Diagnostics & Logs</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Cloud-Fetch
+                            HW Monitor</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Windows
+                            RAM Test</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Event
+                            Viewer Export</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">System
+                            & Battery Info</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Scheduled
+                            Tasks Audit</span>
+                    </div>
+                </div>
+
+                <!-- Backup & Boot Recovery -->
+                <div
+                    class="bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            <path d="M12 9v4l2 2" />
+                        </svg>
+                        <h3 class="text-white font-bold">Backup & Recovery</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">WinPE
+                            USB Creator</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Safe
+                            Mode Toggle</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Full
+                            Registry Backup</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">System
+                            Restore Point</span>
+                        <span
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Deep
+                            System Reboot</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
