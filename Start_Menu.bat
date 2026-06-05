@@ -71,11 +71,19 @@ echo [E] Audio Reset
 echo [F] Event Viewer Error Export
 echo [G] Scheduled Tasks Audit
 echo.
-choice /c BCDEFGPNQ /n /m "Select (B-G) [P]revious [N]ext or [Q]uit: "
+echo === MAINTENANCE ^& OPTIMIZATION ===
+echo [X] Time Sync ^& SSL Certificate Fix
+echo [Y] Browser Rescue (Selective Cache/Cookie Wipe)
+echo [Z] System Debloat ^& OEM Cleaner
+echo.
+choice /c BCDEFGXYZPNQ /n /m "Select (B-G, X-Z) [P]revious [N]ext or [Q]uit: "
 
-if errorlevel 9 goto :EOF
-if errorlevel 8 goto :MainMenu3
-if errorlevel 7 goto :MainMenu
+if errorlevel 12 goto :EOF
+if errorlevel 11 goto :MainMenu3
+if errorlevel 10 goto :MainMenu
+if errorlevel 9 call ".\modules\33_debloat.bat" & goto :MainMenu2
+if errorlevel 8 call ".\modules\32_browser_rescue.bat" & goto :MainMenu2
+if errorlevel 7 call ".\modules\31_time_sync.bat" & goto :MainMenu2
 if errorlevel 6 call ".\modules\17_scheduled_tasks.bat" & goto :MainMenu2
 if errorlevel 5 call ".\modules\16_eventviewer_export.bat" & goto :MainMenu2
 if errorlevel 4 call ".\modules\15_audio_reset.bat" & goto :MainMenu2
@@ -107,12 +115,12 @@ echo [W] DNS Fast-Switcher ^& Hosts Manager
 echo.
 echo === SYSTEM CONTROL ^& RECOVERY ===
 echo [U] Create WinPE Rescue USB
-echo [V] Hardware Monitor (Portable / Install)
+echo [V] Hardware Monitor (Cloud-Fetch)
 echo [R] Advanced Boot (Safe Mode Toggle)
 echo [S] Deep System Reboot
 echo.
 :: Note: P=Previous, Q=Quit. Do not use them for modules.
-choice /c HIJKLMNOTWUVRS PQ /n /m "Select (H-W) [P]revious or [Q]uit: "
+choice /c HIJKLMNOTWUVRSPQ /n /m "Select (H-W) [P]revious or [Q]uit: "
 
 if errorlevel 16 goto :EOF
 if errorlevel 15 goto :MainMenu2
