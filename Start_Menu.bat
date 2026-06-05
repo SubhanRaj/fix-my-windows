@@ -98,17 +98,26 @@ echo [J] Display Settings Reset
 echo [K] Bluetooth Troubleshooter
 echo [L] UAC ^& Security Integrity Check
 echo [M] SPPSVC Malware Repair (Error 577)
-echo [O] Network ^& File Sharing Setup
+echo.
+echo === NETWORKING ^& SHARING ===
+echo [N] Network ^& File Sharing Setup
+echo [O] Wi-Fi Profile Manager ^& Key Extractor
+echo [T] Application Firewall Manager
 echo.
 echo === SYSTEM CONTROL ===
-echo [N] Deep System Reboot
+echo [R] Advanced Boot (Safe Mode Toggle)
+echo [S] Deep System Reboot
 echo.
-choice /c HIJKLMNOPQ /n /m "Select (H-O) [P]revious or [Q]uit: "
+:: Note: P=Previous, Q=Quit. Do not use them for modules.
+choice /c HIJKLMNOTRSPQ /n /m "Select (H-T) [P]revious or [Q]uit: "
 
-if errorlevel 10 goto :EOF
-if errorlevel 9 goto :MainMenu2
-if errorlevel 8 call ".\modules\24_network_sharing.bat" & goto :MainMenu3
-if errorlevel 7 call ".\modules\22_reboot.bat" & goto :MainMenu3
+if errorlevel 13 goto :EOF
+if errorlevel 12 goto :MainMenu2
+if errorlevel 11 call ".\modules\22_reboot.bat" & goto :MainMenu3
+if errorlevel 10 call ".\modules\26_safe_mode.bat" & goto :MainMenu3
+if errorlevel 9 call ".\modules\27_firewall_manager.bat" & goto :MainMenu3
+if errorlevel 8 call ".\modules\25_wifi_manager.bat" & goto :MainMenu3
+if errorlevel 7 call ".\modules\24_network_sharing.bat" & goto :MainMenu3
 if errorlevel 6 call ".\modules\23_sppsvc_repair.bat" & goto :MainMenu3
 if errorlevel 5 call ".\modules\22_uac_integrity.bat" & goto :MainMenu3
 if errorlevel 4 call ".\modules\21_bluetooth_reset.bat" & goto :MainMenu3
