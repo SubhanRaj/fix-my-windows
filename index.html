@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary Meta Tags -->
     <title>fix-my-windows | IT Diagnostic Toolkit</title>
     <meta name="title" content="fix-my-windows | IT Diagnostic Toolkit">
     <meta name="description"
@@ -15,25 +14,21 @@
     <meta name="author" content="SubhanRaj">
     <meta name="theme-color" content="#0f172a">
 
-    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fix-my-windows.pages.dev/">
     <meta property="og:title" content="fix-my-windows | IT Diagnostic Toolkit">
     <meta property="og:description"
         content="A fast, modular, and CLI-based diagnostic toolkit for Windows 7-11. Fix corrupted images, clear temp files, and reset networks with zero installation.">
 
-    <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://fix-my-windows.pages.dev/">
     <meta property="twitter:title" content="fix-my-windows | IT Diagnostic Toolkit">
     <meta property="twitter:description"
         content="A fast, modular, and CLI-based diagnostic toolkit for Windows 7-11. Fix corrupted images, clear temp files, and reset networks with zero installation.">
 
-    <!-- Inline SVG Favicon (Tabler Terminal Icon) -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke-width='2' stroke='%2338bdf8' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9l3 3l-3 3'/%3E%3Cpath d='M13 15l3 0'/%3E%3Cpath d='M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'/%3E%3C/svg%3E">
 
-    <!-- Tailwind CSS CDN & Config -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -193,10 +188,10 @@
 
         <div class="max-w-5xl mx-auto border-t border-cli-700 pt-16 mb-16">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4">22 Powerful Modules</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">30 Powerful Modules</h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    A paginated, auto-elevating CLI menu designed to target specific system failures without unnecessary
-                    bloat.
+                    A paginated, auto-elevating CLI menu designed to target specific system failures, from basic UAC
+                    integrity to deep file-infector malware and offline bootloader recovery.
                 </p>
             </div>
 
@@ -214,9 +209,9 @@
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Disk
                                 Clean:</strong> Temp purge & CHKDSK</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Printer
-                                Suite:</strong> Spooler reset & PDF prep</li>
+                                Suite:</strong> Spooler reset & Ghost clean</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Update
-                                Reset:</strong> Clear Windows Update cache</li>
+                                Reset:</strong> Clear Win Update cache</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
                             <strong>Runtimes:</strong> .NET 3.5 & VC++ installers</li>
                     </ul>
@@ -233,34 +228,36 @@
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Registry
                                 Backup:</strong> Full HKLM/HKCU export</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>License
-                                Status:</strong> Activation & Product Key audit</li>
+                                Status:</strong> Activation audit</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Audio
-                                Reset:</strong> Restart audio drivers & services</li>
+                                Reset:</strong> Restart drivers & services</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Event
-                                Viewer:</strong> Export 24h critical system errors</li>
+                                Viewer:</strong> Export 24h critical errors</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Scheduled
-                                Tasks:</strong> Non-destructive task audit</li>
+                                Tasks:</strong> Non-destructive audit</li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-white font-semibold mb-4 flex items-center gap-2 border-b border-cli-700 pb-2">
                         <span class="bg-cli-800 text-cli-blue text-xs py-1 px-2 rounded">PAGE 3</span>
-                        Hardware & Security
+                        Hardware, Net & Recovery
                     </h4>
                     <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>SPPSVC
+                                Repair:</strong> Fix Error 577 malware</li>
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Wi-Fi
+                                Manager:</strong> Export plaintext keys</li>
                         <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
-                            <strong>GPU/DirectX:</strong> Display adapter diagnostics</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>USB
-                                Reset:</strong> Refresh undetected controllers</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Display
-                                Reset:</strong> Safe defaults for monitors</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Bluetooth
-                                Reset:</strong> Clear pairing cache & services</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>UAC
-                                Integrity:</strong> Privilege & LUA settings check</li>
-                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Deep
-                                Reboot:</strong> Force bypass Fast Startup</li>
+                            <strong>Firewall/DNS:</strong> Rules & fast-switch</li>
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>Safe
+                                Mode:</strong> Advanced Boot toggle</li>
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>WinPE
+                                Rescue:</strong> Create offline USB tool</li>
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span> <strong>System
+                                Monitor:</strong> Cloud-fetch LibreHW</li>
+                        <li class="flex items-start gap-2"><span class="text-cli-blue mt-1">▸</span>
+                            <strong>Resets:</strong> GPU, USB, UAC & Displays</li>
                     </ul>
                 </div>
             </div>
