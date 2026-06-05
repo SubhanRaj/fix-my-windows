@@ -98,14 +98,16 @@ echo [J] Display Settings Reset
 echo [K] Bluetooth Troubleshooter
 echo [L] UAC ^& Security Integrity Check
 echo [M] SPPSVC Malware Repair (Error 577)
+echo [O] Network ^& File Sharing Setup
 echo.
 echo === SYSTEM CONTROL ===
 echo [N] Deep System Reboot
 echo.
-choice /c HIJKLMNPQ /n /m "Select (H-N) [P]revious or [Q]uit: "
+choice /c HIJKLMNOPQ /n /m "Select (H-O) [P]revious or [Q]uit: "
 
-if errorlevel 9 goto :EOF
-if errorlevel 8 goto :MainMenu2
+if errorlevel 10 goto :EOF
+if errorlevel 9 goto :MainMenu2
+if errorlevel 8 call ".\modules\24_network_sharing.bat" & goto :MainMenu3
 if errorlevel 7 call ".\modules\22_reboot.bat" & goto :MainMenu3
 if errorlevel 6 call ".\modules\23_sppsvc_repair.bat" & goto :MainMenu3
 if errorlevel 5 call ".\modules\22_uac_integrity.bat" & goto :MainMenu3
