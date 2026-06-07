@@ -1,73 +1,55 @@
 @echo off
 :RuntimeMenu
 cls
-echo ========================================================
-echo               RUNTIMES ^& FEATURES INSTALLER
-echo ========================================================
 echo.
-echo [1] Enable .NET Framework 3.5 (Includes .NET 2.0 ^& 3.0)
-echo [2] Install Latest Visual C++ Redistributables (x86 ^& x64)
-echo [B] Back to Main Menu
+echo === RUNTIMES ^& REDISTRIBUTABLES INSTALLER ===
 echo.
+echo [1] Install .NET Desktop Runtime (Latest x64)
+echo [2] Install Visual C++ Redistributable (2015-2022 x64)
+echo [3] Install .NET Framework 3.5 (Legacy)
+echo [0] Return to Main Menu
+echo.
+choice /c 1230 /n /m "Select option (1-3, 0): "
 
-choice /c 12B /n /m "Select an option: "
+if errorlevel 4 goto :EOF
+if errorlevel 3 goto :Net35
+if errorlevel 2 goto :VCRedist
+if errorlevel 1 goto :NetDesktop
 
-if errorlevel 3 goto :EOF
-if errorlevel 2 goto :InstallVC
-if errorlevel 1 goto :InstallNet
-
-:InstallNet
+:NetDesktop
 echo.
-echo Enabling .NET Framework 3.5 via DISM...
-Dism /Online /Enable-Feature /FeatureName:NetFx3 /All
+echo Installing latest .NET Desktop Runtime via Winget...
+:: Native Windows package manager handles the correct architecture and version silently
+winget install Microsoft.DotNet.DesktopRuntime --silent --accept-package-agreements --accept-source-agreements
+if errorlevel 1 (
+    echo [ERROR] Winget failed or is not installed on this OS version.
+) else (
+    echo [SUCCESS] .NET Desktop Runtime installed successfully.
+)
 echo.
-echo .NET Framework 3.5 configuration complete.
 pause
 goto :RuntimeMenu
 
-:InstallVC
+:VCRedist
 echo.
-echo Downloading and installing Visual C++ Redistributables...
-echo This uses official Microsoft permalinks and installs silently.
-echo.
-echo Checking internet connectivity...
-ping -n 1 8.8.8.8 >nul 2>&1
-if %errorlevel% neq 0 (
-    echo.
-    echo ERROR: No internet connection detected!
-    echo Visual C++ Redistributables require an internet connection to download.
-    echo Please connect to the internet and try again.
-    echo.
-    pause
-    goto :RuntimeMenu
-)
+echo [1/2] Downloading Visual C++ 2015-2022 (x64)...
+set "VC_INSTALLER=%TEMP%\vc_redist.x64.exe"
+powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://aka.ms/vs/17/release/vc_redist.x64.exe' -OutFile '%VC_INSTALLER%'"
+
+echo [2/2] Silently installing...
+"%VC_INSTALLER%" /install /quiet /norestart
+del /q "%VC_INSTALLER%" >nul 2>&1
 
 echo.
-echo Downloading x64 Redistributable...
-powershell -ExecutionPolicy Bypass -Command "(New-Object Net.ServicePointManager).SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object Net.WebClient).DownloadFile('https://aka.ms/vc14/vc_redist.x64.exe', '%TEMP%\vc_redist.x64.exe')" >nul 2>&1
-if %errorlevel% neq 0 (
-    echo ERROR: Failed to download x64 redistributable. Check your internet connection.
-    pause
-    goto :RuntimeMenu
-)
-echo Installing x64 Redistributable...
-"%TEMP%\vc_redist.x64.exe" /quiet /norestart
-del "%TEMP%\vc_redist.x64.exe" >nul 2>&1
-
-echo.
-echo Downloading x86 Redistributable...
-powershell -ExecutionPolicy Bypass -Command "(New-Object Net.ServicePointManager).SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object Net.WebClient).DownloadFile('https://aka.ms/vc14/vc_redist.x86.exe', '%TEMP%\vc_redist.x86.exe')" >nul 2>&1
-if %errorlevel% neq 0 (
-    echo ERROR: Failed to download x86 redistributable. Check your internet connection.
-    pause
-    goto :RuntimeMenu
-)
-echo Installing x86 Redistributable...
-"%TEMP%\vc_redist.x86.exe" /quiet /norestart
-del "%TEMP%\vc_redist.x86.exe" >nul 2>&1
-
-echo.
-echo Visual C++ Redistributables installation complete!
+echo [SUCCESS] Visual C++ Redistributable installed.
 pause
 goto :RuntimeMenu
 
+:Net35
+echo.
+echo Installing .NET Framework 3.5 via DISM...
+Dism /online /Enable-Feature /FeatureName:"NetFx3" /All >nul 2>&1
+echo.
+echo [SUCCESS] .NET 3.5 Installation command finished.
+pause
+goto :RuntimeMenu

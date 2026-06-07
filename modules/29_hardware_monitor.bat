@@ -19,7 +19,8 @@ set "TEMP_DIR=%TEMP%\fmw_lhm"
 if exist "%TEMP_DIR%" rmdir /s /q "%TEMP_DIR%" >nul 2>&1
 mkdir "%TEMP_DIR%"
 
-powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' } | Select-Object -First 1; Write-Host '[2/3] Downloading...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
+:: The -notmatch 'net[0-9]' filter forces it to download the native Framework build
+powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
 
 if errorlevel 1 (
     echo.
@@ -31,6 +32,10 @@ if errorlevel 1 (
 echo.
 echo Launching Hardware Monitor...
 start "" "%TEMP_DIR%\Extracted\LibreHardwareMonitor.exe"
+
+echo Automating PawnIO Driver setup...
+:: Auto-clicks "OK" on the PawnIO kernel driver prompt
+powershell -NoProfile -Command "$wshell = New-Object -ComObject WScript.Shell; Start-Sleep -Seconds 3; if ($wshell.AppActivate('LibreHardwareMonitor')) { Start-Sleep -Milliseconds 500; $wshell.SendKeys('{ENTER}') }"
 goto :EOF
 
 :FetchInstall
@@ -41,7 +46,7 @@ set "TEMP_DIR=%TEMP%\fmw_lhm"
 if exist "%TEMP_DIR%" rmdir /s /q "%TEMP_DIR%" >nul 2>&1
 mkdir "%TEMP_DIR%"
 
-powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' } | Select-Object -First 1; Write-Host '[2/3] Downloading...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
+powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
 
 if errorlevel 1 (
     echo.
@@ -62,6 +67,9 @@ echo Cleaning up Temp...
 rmdir /s /q "%TEMP_DIR%" >nul 2>&1
 
 echo.
-echo [SUCCESS] Installed.
+echo [SUCCESS] Installed. Launching...
 start "" "%INSTALL_DIR%\LibreHardwareMonitor.exe"
+
+echo Automating PawnIO Driver setup...
+powershell -NoProfile -Command "$wshell = New-Object -ComObject WScript.Shell; Start-Sleep -Seconds 3; if ($wshell.AppActivate('LibreHardwareMonitor')) { Start-Sleep -Milliseconds 500; $wshell.SendKeys('{ENTER}') }"
 goto :EOF
