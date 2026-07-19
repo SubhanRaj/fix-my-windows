@@ -1,31 +1,53 @@
 @echo off
+:PrinterMenu
+cls
 echo.
 echo === PRINTER REPAIR SUITE ===
 echo.
-echo [1/3] Resetting Print Spooler Service...
+echo [1] Reset Print Spooler (clears stuck print jobs)
+echo [2] Enable 'Microsoft Print to PDF' (Windows 10+)
+echo [3] Interactive Printer Manager (view / remove printers)
+echo [4] Run All (Spooler + PDF + Manager)
+echo [0] Return to Main Menu
+echo.
+choice /c 12340 /n /m "Select an option (1-4, 0): "
+
+if errorlevel 5 goto :EOF
+if errorlevel 4 call :ResetSpooler & call :EnablePDF & call :PrinterManager & goto :Done
+if errorlevel 3 call :PrinterManager & goto :Done
+if errorlevel 2 call :EnablePDF & goto :Done
+if errorlevel 1 call :ResetSpooler & goto :Done
+
+goto :PrinterMenu
+
+:ResetSpooler
+echo.
+echo Resetting Print Spooler Service...
 net stop spooler /y >nul 2>&1
 echo Clearing stuck print jobs from queue...
 del /Q /F /S "%systemroot%\System32\Spool\Printers\*.*" >nul 2>&1
 net start spooler >nul 2>&1
+echo Spooler reset complete.
+goto :eof
 
+:EnablePDF
 echo.
-echo [2/3] Printer Features Configuration...
-
+echo Checking 'Microsoft Print to PDF' feature...
 :: Detect Windows version to determine Print to PDF availability
 for /f "tokens=4-5 delims=. " %%i in ('ver') do set VERSION=%%i.%%j
 
 if "%VERSION%" GEQ "10.0" (
     echo Ensuring 'Microsoft Print to PDF' is enabled...
     Dism /Online /Enable-Feature /FeatureName:Printing-PrintToPDFServices-Features /NoRestart >nul 2>&1
+    echo Print to PDF enabled.
 ) else (
     echo Note: Print to PDF is a Windows 10+ feature. Skipping on this system.
 )
+goto :eof
 
+:PrinterManager
 echo.
-echo [3/3] Advanced Printer Management
 echo This tool allows you to view and delete duplicate or ghost printers.
-choice /c YN /m "Open interactive Printer Manager? (Y=Yes, N=Skip): "
-if errorlevel 2 goto :SkipPrinterManager
 
 :: =====================================================================
 :: Generate the Interactive PowerShell Payload dynamically
@@ -73,8 +95,9 @@ echo } >> "%PS_PAYLOAD%"
 :: Execute the payload and clean up
 powershell -NoProfile -ExecutionPolicy Bypass -File "%PS_PAYLOAD%"
 del /q "%PS_PAYLOAD%" >nul 2>&1
+goto :eof
 
-:SkipPrinterManager
+:Done
 echo.
 echo === PRINTER REPAIR COMPLETE ===
 pause

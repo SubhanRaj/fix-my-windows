@@ -5,32 +5,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>fix-my-windows | IT Diagnostic Toolkit</title>
-    <meta name="title" content="fix-my-windows | IT Diagnostic Toolkit">
+    <title>fix-my-windows | Fix Windows Errors with DISM, SFC & 33 Free Repair Tools</title>
+    <meta name="title" content="fix-my-windows | Fix Windows Errors with DISM, SFC & 33 Free Repair Tools">
     <meta name="description"
-        content="A fast, modular, and CLI-based diagnostic toolkit for Windows 7-11. Fix corrupted images, clear temp files, and reset networks with zero installation.">
+        content="Free CLI toolkit to fix Windows 7-11 in one command: run SFC/DISM repairs, reset the print spooler, fix Windows Update errors, install .NET Framework & VC++ runtimes, reset network/DNS, recover Wi-Fi passwords, and more. Zero install required.">
     <meta name="keywords"
-        content="Windows repair, CLI toolkit, sysadmin tools, PowerShell scripts, DISM, SFC, network reset, IT diagnostics">
+        content="fix windows, windows repair tool, dism restorehealth, sfc scannow, fix print spooler, reset print spooler, install net framework offline, fix windows update stuck, reset winsock, network reset windows, wifi password recovery, IT diagnostic toolkit, sysadmin tools, PowerShell scripts, CLI toolkit">
     <meta name="author" content="SubhanRaj">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="https://fix-my-windows.pages.dev/">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fix-my-windows.pages.dev/">
-    <meta property="og:title" content="fix-my-windows | IT Diagnostic Toolkit">
+    <meta property="og:title" content="fix-my-windows | Fix Windows Errors with DISM, SFC & 33 Free Repair Tools">
     <meta property="og:description"
-        content="A fast, modular, and CLI-based diagnostic toolkit for Windows 7-11. Fix corrupted images, clear temp files, and reset networks with zero installation.">
+        content="Free CLI toolkit to fix Windows 7-11 in one command: run SFC/DISM repairs, reset the print spooler, fix Windows Update errors, install .NET Framework & VC++ runtimes, reset network/DNS, and more. Zero install required.">
     <meta property="og:image"
         content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke-width='2' stroke='%2338bdf8' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9l3 3l-3 3'/%3E%3Cpath d='M13 15l3 0'/%3E%3Cpath d='M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'/%3E%3C/svg%3E">
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://fix-my-windows.pages.dev/">
-    <meta property="twitter:title" content="fix-my-windows | IT Diagnostic Toolkit">
+    <meta property="twitter:title" content="fix-my-windows | Fix Windows Errors with DISM, SFC & 33 Free Repair Tools">
     <meta property="twitter:description"
-        content="A fast, modular, and CLI-based diagnostic toolkit for Windows 7-11. Fix corrupted images, clear temp files, and reset networks with zero installation.">
+        content="Free CLI toolkit to fix Windows 7-11 in one command: run SFC/DISM repairs, reset the print spooler, fix Windows Update errors, install .NET Framework & VC++ runtimes, reset network/DNS, and more. Zero install required.">
     <meta property="twitter:image"
         content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke-width='2' stroke='%2338bdf8' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9l3 3l-3 3'/%3E%3Cpath d='M13 15l3 0'/%3E%3Cpath d='M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'/%3E%3C/svg%3E">
+
+    <!-- Structured data for search engines (SoftwareApplication + FAQPage) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "fix-my-windows",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Windows 7, Windows 8.1, Windows 10, Windows 11",
+        "description": "A free, zero-install CLI diagnostic toolkit for Windows. Repairs corrupted system files with SFC and DISM, resets the print spooler, fixes Windows Update errors, installs .NET Framework and Visual C++ runtimes, resets network stacks, and audits security settings.",
+        "url": "https://fix-my-windows.pages.dev/",
+        "downloadUrl": "https://fix-my-windows.pages.dev/run.ps1",
+        "author": { "@type": "Person", "name": "SubhanRaj" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://github.com/SubhanRaj/fix-my-windows/blob/main/LICENSE"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I fix Windows using DISM and SFC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Run the fix-my-windows one-liner (irm https://fix-my-windows.pages.dev/run.ps1 | iex) in an Administrator PowerShell window, then choose module [1] OS Repair. It runs sfc /scannow followed by DISM /ScanHealth, /CheckHealth, and /RestoreHealth to repair corrupted system files automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I reset the print spooler on Windows?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use module [4] Printer Repair Suite and choose 'Reset Print Spooler'. It stops the Print Spooler service, clears stuck jobs from the queue, and restarts the service without touching your installed printers or drivers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install .NET Framework 3.5 or Visual C++ Redistributables offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Module [6] Runtimes Installer enables .NET Framework 3.5 via DISM or downloads and installs the latest Visual C++ x86/x64 Redistributables from official Microsoft permalinks, on Windows 7 through 11."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix Windows Update stuck downloading or installing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Module [5] Update Reset stops the Windows Update services, clears the SoftwareDistribution and Catroot2 cache folders, and restarts the services, which resolves most stuck or corrupted Windows Update states."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is fix-my-windows safe to run on a work or domain computer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. It never modifies Group Policy settings, preserves manually assigned static IP addresses, only performs read-only registry audits, and creates a System Restore Point before aggressive repairs so every change is reversible."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does fix-my-windows work on Windows 7?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. All 33 modules support Windows 7 through Windows 11, with automatic fallbacks to WMIC and legacy PowerShell APIs on older systems where newer cmdlets are unavailable."
+                }
+            }
+        ]
+    }
+    </script>
 
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke-width='2' stroke='%2338bdf8' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M8 9l3 3l-3 3'/%3E%3Cpath d='M13 15l3 0'/%3E%3Cpath d='M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z'/%3E%3C/svg%3E">
@@ -42,12 +119,65 @@
             theme: {
                 extend: {
                     colors: {
-                        cli: { 900: '#0f172a', 800: '#1e293b', 700: '#334155', blue: '#38bdf8' }
+                        cli: {
+                            900: 'rgb(var(--color-cli-900) / <alpha-value>)',
+                            800: 'rgb(var(--color-cli-800) / <alpha-value>)',
+                            700: 'rgb(var(--color-cli-700) / <alpha-value>)',
+                            blue: 'rgb(var(--color-cli-blue) / <alpha-value>)'
+                        },
+                        gray: {
+                            300: 'rgb(var(--color-gray-300) / <alpha-value>)',
+                            400: 'rgb(var(--color-gray-400) / <alpha-value>)',
+                            500: 'rgb(var(--color-gray-500) / <alpha-value>)',
+                            600: 'rgb(var(--color-gray-600) / <alpha-value>)'
+                        },
+                        white: 'rgb(var(--color-white) / <alpha-value>)'
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Automatic light/dark theme: OS preference only, no toggle or localStorage. */
+        :root {
+            --color-cli-900: 15 23 42;
+            --color-cli-800: 30 41 59;
+            --color-cli-700: 51 65 85;
+            --color-cli-blue: 56 189 248;
+            --color-gray-300: 209 213 219;
+            --color-gray-400: 156 163 175;
+            --color-gray-500: 107 114 128;
+            --color-gray-600: 75 85 99;
+            --color-white: 255 255 255;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --color-cli-900: 248 250 252;
+                --color-cli-800: 255 255 255;
+                --color-cli-700: 203 213 225;
+                --color-cli-blue: 2 132 199;
+                --color-gray-300: 15 23 42;
+                --color-gray-400: 71 85 105;
+                --color-gray-500: 71 85 105;
+                --color-gray-600: 100 116 139;
+                --color-white: 15 23 42;
+            }
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .fade-up {
+                animation: fade-up 0.6s ease-out both;
+            }
+
+            @keyframes fade-up {
+                from { opacity: 0; transform: translateY(12px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-cli-900 text-gray-300 font-sans antialiased selection:bg-cli-blue selection:text-white">
@@ -64,6 +194,11 @@
                 </svg>
                 <span class="text-white font-bold text-xl tracking-tight">fix-my-windows</span>
             </div>
+            <div class="hidden sm:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#modules" class="hover:text-white transition">Modules</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+                <a href="docs.html" class="hover:text-white transition">Docs</a>
+            </div>
             <a href="https://github.com/SubhanRaj/fix-my-windows" target="_blank"
                 class="text-gray-400 hover:text-white transition">
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -76,27 +211,39 @@
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">Zero-Install IT Diagnostics.</h1>
-            <p class="text-lg sm:text-xl text-gray-400 leading-relaxed">
-                A fast, modular, and CLI-based diagnostic toolkit for Windows. Fix corrupted images, clear temporary
-                files, and reset network stacks without destroying custom configurations.
+        <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+            <p class="text-xs font-mono tracking-[0.2em] text-cli-blue uppercase mb-4">IT Diagnostic Toolkit</p>
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 tracking-tight">
+                Fix Windows in one command.
+            </h1>
+            <p class="text-lg text-gray-400 leading-relaxed">
+                A free, zero-install CLI toolkit for Windows 7-11. Run SFC and DISM repairs, reset the print
+                spooler, fix stuck Windows Update, install .NET & VC++ runtimes, and reset network stacks
+                &mdash; without destroying custom configurations.
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto bg-cli-800 rounded-xl border border-cli-700 shadow-2xl overflow-hidden mb-20">
+        <div
+            class="max-w-4xl mx-auto bg-cli-800 rounded-xl border border-cli-700 shadow-xl overflow-hidden mb-20 fade-up">
             <div class="bg-cli-700/50 px-6 py-4 border-b border-cli-700 flex items-center justify-between">
-                <h2 class="text-white font-semibold flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M19 18a3.5 3.5 0 0 0 0 -7h-1a5 4.5 0 0 0 -11 -2a4.6 4.4 0 0 0 -2.1 8.4"></path>
-                        <path d="M12 13l0 9"></path>
-                        <path d="M9 19l3 3l3 -3"></path>
-                    </svg>
-                    Quick Start Deployment
-                </h2>
+                <div class="flex items-center gap-4">
+                    <span class="hidden sm:flex items-center gap-1.5" aria-hidden="true">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
+                    </span>
+                    <h2 class="text-white font-semibold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M19 18a3.5 3.5 0 0 0 0 -7h-1a5 4.5 0 0 0 -11 -2a4.6 4.4 0 0 0 -2.1 8.4"></path>
+                            <path d="M12 13l0 9"></path>
+                            <path d="M9 19l3 3l3 -3"></path>
+                        </svg>
+                        Quick Start Deployment
+                    </h2>
+                </div>
                 <span class="text-xs font-mono bg-cli-900 text-gray-400 px-2 py-1 rounded border border-cli-700">Run as
                     Administrator</span>
             </div>
@@ -122,11 +269,10 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-2">For Windows 7 & 8.1 (Legacy
-                        Fallback)</label>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">For Windows 7 & 8.1</label>
                     <div class="relative group">
                         <pre
-                            class="bg-cli-900 p-4 rounded-lg overflow-x-auto text-green-400 font-mono text-sm border border-cli-700"><code id="cmd-legacy">[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iex ((New-Object Net.WebClient).DownloadString('https://fix-my-windows.pages.dev/run.ps1'))</code></pre>
+                            class="bg-cli-900 p-4 rounded-lg overflow-x-auto text-cli-blue font-mono text-sm border border-cli-700"><code id="cmd-legacy">[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iex ((New-Object Net.WebClient).DownloadString('https://fix-my-windows.pages.dev/run.ps1'))</code></pre>
                         <button onclick="copyToClipboard('cmd-legacy', this)"
                             class="absolute top-2 right-2 bg-cli-800 hover:bg-cli-700 text-gray-300 p-2 rounded border border-cli-700 transition opacity-0 group-hover:opacity-100 focus:opacity-100 flex items-center gap-1 text-xs">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" stroke-width="2"
@@ -145,60 +291,73 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             <div
-                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cli-blue mb-4" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M7 12l5 5l-1.5 1.5a3.536 3.536 0 1 1 -5 -5l1.5 -1.5z"></path>
-                    <path d="M17 12l-5 -5l1.5 -1.5a3.536 3.536 0 1 1 5 5l-1.5 1.5z"></path>
-                    <path d="M3 21l2.5 -2.5"></path>
-                    <path d="M18.5 5.5l2.5 -2.5"></path>
-                    <path d="M10 11l-2 2"></path>
-                    <path d="M13 14l-2 2"></path>
-                </svg>
+                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 hover:-translate-y-1 transition duration-300">
+                <div class="w-12 h-12 rounded-lg bg-cli-blue/10 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M7 12l5 5l-1.5 1.5a3.536 3.536 0 1 1 -5 -5l1.5 -1.5z"></path>
+                        <path d="M17 12l-5 -5l1.5 -1.5a3.536 3.536 0 1 1 5 5l-1.5 1.5z"></path>
+                        <path d="M3 21l2.5 -2.5"></path>
+                        <path d="M18.5 5.5l2.5 -2.5"></path>
+                        <path d="M10 11l-2 2"></path>
+                        <path d="M13 14l-2 2"></path>
+                    </svg>
+                </div>
                 <h3 class="text-white font-bold mb-2">Safe Network Reset</h3>
                 <p class="text-sm text-gray-400">Flushes DNS and resets Winsock without wiping out manually assigned
                     static IPs or enterprise Group Policy.</p>
             </div>
             <div
-                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cli-blue mb-4" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path
-                        d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06">
-                    </path>
-                    <path d="M15 11l-4 4l-2 -2"></path>
-                </svg>
+                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 hover:-translate-y-1 transition duration-300">
+                <div class="w-12 h-12 rounded-lg bg-cli-blue/10 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                            d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06">
+                        </path>
+                        <path d="M15 11l-4 4l-2 -2"></path>
+                    </svg>
+                </div>
                 <h3 class="text-white font-bold mb-2">100% Reversible</h3>
                 <p class="text-sm text-gray-400">Automatic system restore points, registry backups, and scheduled tasks
                     audits before aggressive repairs.</p>
             </div>
             <div
-                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 transition duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cli-blue mb-4" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M3 5h6v14h-6z"></path>
-                    <path d="M12 9h10v7h-10z"></path>
-                    <path d="M14 19h6"></path>
-                    <path d="M17 16v3"></path>
-                    <path d="M6 13v.01"></path>
-                    <path d="M6 16v.01"></path>
-                </svg>
+                class="bg-cli-800 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/50 hover:-translate-y-1 transition duration-300">
+                <div class="w-12 h-12 rounded-lg bg-cli-blue/10 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 5h6v14h-6z"></path>
+                        <path d="M12 9h10v7h-10z"></path>
+                        <path d="M14 19h6"></path>
+                        <path d="M17 16v3"></path>
+                        <path d="M6 13v.01"></path>
+                        <path d="M6 16v.01"></path>
+                    </svg>
+                </div>
                 <h3 class="text-white font-bold mb-2">Cross-Platform Support</h3>
                 <p class="text-sm text-gray-400">Full Windows 7 through 11 support with intelligent fallbacks (WMI vs
                     PowerShell) for legacy systems.</p>
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto border-t border-cli-700 pt-16 mb-16">
+        <div id="modules" class="max-w-6xl mx-auto border-t border-cli-700 pt-16 mb-16 scroll-mt-16">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white mb-4">33 Powerful Modules</h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
                     A comprehensive, interactive toolkit designed to target specific system failures without unnecessary
                     bloat.
                 </p>
+                <p class="text-gray-500 text-sm mt-3">Every module automates a technique documented by Microsoft
+                    &mdash; click any tag below to read the official source. Full list in
+                    <a href="https://github.com/SubhanRaj/fix-my-windows/blob/main/SOURCES.md" target="_blank"
+                        rel="noopener" class="text-cli-blue hover:underline">SOURCES.md</a>.</p>
             </div>
 
             <!-- Bento Box Module Grid -->
@@ -206,206 +365,347 @@
 
                 <!-- Core Repair -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Core System Repair</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Runs the same SFC/DISM repair chain, Windows Update
+                        cache reset, and print spooler fix Microsoft support techs use manually &mdash; automated
+                        into one pass. Tap a tag for the official Microsoft doc it's based on.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">SFC
-                            & DISM Repair</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Temp
-                            Purge</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">WinUpdate
-                            Cache</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Printer
-                            Spooler</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">.NET
-                            & VC++ Runtimes</span>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sfc" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">SFC
+                            & DISM Repair</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Temp
+                            Purge</a>
+                        <a href="https://support.microsoft.com/en-us/windows/windows-update-troubleshooter-19bc41ca-ad72-ae67-af3c-89ce169755dd" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">WinUpdate
+                            Cache</a>
+                        <a href="https://support.microsoft.com/en-us/windows/fix-print-spooler-service-not-running-errors-in-windows-bb0de80a-8c4a-4938-a36a-f89a859113f0" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Printer
+                            Spooler</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">.NET
+                            & VC++ Runtimes</a>
                     </div>
                 </div>
 
                 <!-- Networking -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                            <path d="M3.6 9h16.8" />
-                            <path d="M3.6 15h16.8" />
-                            <path d="M11.5 3a17 17 0 0 0 0 18" />
-                            <path d="M12.5 3a17 17 0 0 1 0 18" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                <path d="M3.6 9h16.8" />
+                                <path d="M3.6 15h16.8" />
+                                <path d="M11.5 3a17 17 0 0 0 0 18" />
+                                <path d="M12.5 3a17 17 0 0 1 0 18" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Network & Web</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Winsock/TCP-IP resets, DNS switching, and firewall rule
+                        management via the same <code class="text-cli-blue">netsh</code> commands documented by
+                        Microsoft &mdash; without preserving your static IP or Group Policy settings incorrectly.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Safe
-                            Network Reset</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">DNS
-                            Fast-Switcher</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Wi-Fi
-                            Key Extractor</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Local
-                            Share Setup</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">App
-                            Firewall GUI</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Browser
-                            Cache Rescue</span>
+                        <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/reset-tcp-ip-net-shell" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Safe
+                            Network Reset</a>
+                        <a href="https://learn.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">DNS
+                            Fast-Switcher</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-wlan" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Wi-Fi
+                            Key Extractor</a>
+                        <a href="https://support.microsoft.com/en-us/windows/file-sharing-over-a-network-in-windows-b58704b2-f53a-4b82-7bc1-80f9994725bf" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Local
+                            Share Setup</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-advfirewall" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">App
+                            Firewall GUI</a>
+                        <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Browser
+                            Cache Rescue</a>
                     </div>
                 </div>
 
                 <!-- Hardware & Peripherals -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" />
-                            <path d="M7 20h10" />
-                            <path d="M9 16v4" />
-                            <path d="M15 16v4" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z" />
+                                <path d="M7 20h10" />
+                                <path d="M9 16v4" />
+                                <path d="M15 16v4" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Hardware & Drivers</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Resets GPU, USB, display, Bluetooth, audio, and NIC time
+                        sync through the PnP and driver-reset paths Microsoft's own troubleshooters walk you
+                        through step by step &mdash; here it's one menu choice.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">GPU
-                            / DirectX Reset</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">USB
-                            Controller Refresh</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Display
-                            Defaults</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Bluetooth
-                            Troubleshooter</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Audio
-                            Driver Reset</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">NTP
-                            / NIC Time Sync</span>
+                        <a href="https://support.microsoft.com/en-za/help/4028644/windows-open-and-run-dxdiagexe" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">GPU
+                            / DirectX Reset</a>
+                        <a href="https://learn.microsoft.com/en-us/powershell/module/pnpdevice/disable-pnpdevice" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">USB
+                            Controller Refresh</a>
+                        <a href="https://support.microsoft.com/en-us/windows/hardware/display-graphics/fix-graphics-device-problems-with-error-code-43" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Display
+                            Defaults</a>
+                        <a href="https://support.microsoft.com/en-us/windows/fix-bluetooth-problems-in-windows-723e092f-03fa-858b-5c80-131ec3fba75c" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Bluetooth
+                            Troubleshooter</a>
+                        <a href="https://support.microsoft.com/en-us/windows/hardware/audio/fix-sound-or-audio-problems-in-windows" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Audio
+                            Driver Reset</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">NTP
+                            / NIC Time Sync</a>
                     </div>
                 </div>
 
                 <!-- Security & Debloat -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Security & Debloat</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Audits Defender and UAC state, repairs a hijacked
+                        Software Protection service, and strips telemetry/bloatware policies &mdash; read-only
+                        audits by default, changes always confirmed before they're applied.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">SPPSVC
-                            Malware Fix</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">OEM
-                            & Appx Cleaner</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Telemetry
-                            Stripper</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">UAC
-                            Integrity Check</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Defender
-                            Audit</span>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">SPPSVC
+                            Malware Fix</a>
+                        <a href="https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">OEM
+                            & Appx Cleaner</a>
+                        <a href="https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Telemetry
+                            Stripper</a>
+                        <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">UAC
+                            Integrity Check</a>
+                        <a href="https://learn.microsoft.com/en-us/powershell/module/defender/get-mpcomputerstatus" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Defender
+                            Audit</a>
                     </div>
                 </div>
 
                 <!-- Diagnostics & Logs -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M3 12h4l3 8l4 -16l3 8h4" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M3 12h4l3 8l4 -16l3 8h4" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Diagnostics & Logs</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Exports RAM diagnostics, Event Viewer errors, scheduled
+                        tasks, and battery/system health reports for handing to a technician &mdash; no digging
+                        through Event Viewer's UI by hand.</p>
                     <div class="flex flex-wrap gap-2">
                         <span
                             class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Cloud-Fetch
                             HW Monitor</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Windows
-                            RAM Test</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Event
-                            Viewer Export</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">System
-                            & Battery Info</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Scheduled
-                            Tasks Audit</span>
+                        <a href="https://support.microsoft.com/en-us/windows/windows-startup-settings-1af6ec8c-4d4a-4b23-adb7-e76eef0b847f" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Windows
+                            RAM Test</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Event
+                            Viewer Export</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">System
+                            & Battery Info</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Scheduled
+                            Tasks Audit</a>
                     </div>
                 </div>
 
                 <!-- Backup & Boot Recovery -->
                 <div
-                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 transition duration-300">
+                    class="flex flex-col h-full bg-cli-800/50 p-6 rounded-xl border border-cli-700 hover:border-cli-blue/40 hover:-translate-y-1 transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-cli-blue" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                            <path d="M12 9v4l2 2" />
-                        </svg>
+                        <div class="w-10 h-10 rounded-lg bg-cli-blue/10 flex items-center justify-center shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue" viewBox="0 0 24 24"
+                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                <path d="M12 9v4l2 2" />
+                            </svg>
+                        </div>
                         <h3 class="text-white font-bold">Backup & Recovery</h3>
                     </div>
+                    <p class="text-sm text-gray-400 mb-4">Creates restore points and full registry backups before
+                        anything risky runs, and builds a bootable WinPE rescue USB for machines that won't start
+                        at all &mdash; the safety net behind every other module.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">WinPE
-                            USB Creator</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Safe
-                            Mode Toggle</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Full
-                            Registry Backup</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">System
-                            Restore Point</span>
-                        <span
-                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full">Deep
-                            System Reboot</span>
+                        <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-create-usb-bootable-drive" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">WinPE
+                            USB Creator</a>
+                        <a href="https://support.microsoft.com/en-us/topic/use-bootrec-exe-in-the-windows-re-to-troubleshoot-startup-issues-902ebb04-daa3-4f90-579f-0fbf51f7dd5d" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Safe
+                            Mode Toggle</a>
+                        <a href="https://support.microsoft.com/en-us/topic/how-to-back-up-and-restore-the-registry-in-windows-855140ad-e318-2a13-2829-d428a2ab0692" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Full
+                            Registry Backup</a>
+                        <a href="https://support.microsoft.com/en-us/windows/create-a-system-restore-point-9557d4f2-ee87-4703-8ba4-5ce2437bd5a4" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">System
+                            Restore Point</a>
+                        <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown" target="_blank" rel="noopener"
+                            class="bg-cli-900 border border-cli-700 text-gray-300 text-xs px-3 py-1.5 rounded-full hover:border-cli-blue/60 hover:text-cli-blue transition">Deep
+                            System Reboot</a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div id="faq" class="max-w-3xl mx-auto border-t border-cli-700 pt-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40" open>
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        How do I fix Windows using DISM and SFC?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Run the one-liner above in an
+                        Administrator PowerShell window, then choose module <strong>[1] OS Repair</strong>. It runs
+                        <code class="text-cli-blue">sfc /scannow</code> followed by DISM <code
+                            class="text-cli-blue">/ScanHealth</code>, <code
+                            class="text-cli-blue">/CheckHealth</code>, and <code
+                            class="text-cli-blue">/RestoreHealth</code> to repair corrupted system files
+                        automatically.</p>
+                </details>
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40">
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        How do I reset the print spooler on Windows?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Use module <strong>[4] Printer Repair
+                            Suite</strong> and choose "Reset Print Spooler". It stops the Print Spooler service,
+                        clears stuck jobs from the queue, and restarts the service without touching your installed
+                        printers or drivers.</p>
+                </details>
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40">
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        How do I install .NET Framework 3.5 or Visual C++ Redistributables offline?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Module <strong>[6] Runtimes
+                            Installer</strong> enables .NET Framework 3.5 via DISM or downloads and installs the
+                        latest Visual C++ x86/x64 Redistributables from official Microsoft permalinks, on Windows 7
+                        through 11.</p>
+                </details>
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40">
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        How do I fix Windows Update stuck downloading or installing?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Module <strong>[5] Update
+                            Reset</strong> stops the Windows Update services, clears the SoftwareDistribution and
+                        Catroot2 cache folders, and restarts the services &mdash; resolving most stuck or corrupted
+                        Windows Update states.</p>
+                </details>
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40">
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        Is fix-my-windows safe to run on a work or domain computer?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Yes. It never modifies Group Policy
+                        settings, preserves manually assigned static IP addresses, only performs read-only registry
+                        audits, and creates a System Restore Point before aggressive repairs so every change is
+                        reversible.</p>
+                </details>
+                <details class="group bg-cli-800/50 rounded-xl border border-cli-700 open:border-cli-blue/40">
+                    <summary
+                        class="flex items-center justify-between gap-4 p-6 cursor-pointer select-none text-white font-semibold">
+                        Does fix-my-windows work on Windows 7?
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-cli-blue shrink-0 transition-transform group-open:rotate-45"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 5l0 14"></path>
+                            <path d="M5 12l14 0"></path>
+                        </svg>
+                    </summary>
+                    <p class="text-sm text-gray-400 leading-relaxed px-6 pb-6">Yes. All 33 modules support Windows 7
+                        through Windows 11, with automatic fallbacks to WMIC and legacy PowerShell APIs on older
+                        systems where newer cmdlets are unavailable.</p>
+                </details>
             </div>
         </div>
     </main>
@@ -414,6 +714,17 @@
         <p>Licensed under the MIT License.</p>
         <p class="mt-2"><a href="https://github.com/SubhanRaj/fix-my-windows"
                 class="hover:text-cli-blue transition">View Source on GitHub</a></p>
+        <p class="mt-4 max-w-2xl mx-auto text-xs text-gray-600">Repair techniques are based on official
+            <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/"
+                target="_blank" rel="noopener" class="hover:text-cli-blue transition">Microsoft Learn</a> and
+            <a href="https://support.microsoft.com/en-us/windows" target="_blank" rel="noopener"
+                class="hover:text-cli-blue transition">Microsoft Support</a> documentation (see
+            <a href="https://github.com/SubhanRaj/fix-my-windows/blob/main/SOURCES.md" target="_blank"
+                rel="noopener" class="hover:text-cli-blue transition">SOURCES.md</a>). Hardware monitoring is
+            powered by
+            <a href="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor" target="_blank" rel="noopener"
+                class="hover:text-cli-blue transition">LibreHardwareMonitor</a> (MPL 2.0). Windows is a trademark
+            of Microsoft Corporation; fix-my-windows is an independent, unaffiliated project.</p>
     </footer>
 
     <script>

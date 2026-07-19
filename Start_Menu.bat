@@ -2,6 +2,12 @@
 TITLE fix-my-windows Diagnostic Toolkit
 COLOR 0B
 
+:: Disable Console QuickEdit Mode: a click inside the window pauses stdout
+:: (freezes SFC/DISM/CHKDSK progress) until a key is pressed. Only takes
+:: effect on the NEXT console spawned, so set it before the elevation
+:: relaunch below creates the real working console.
+reg add "HKCU\Console" /v QuickEdit /t REG_DWORD /d 0 /f >nul 2>&1
+
 :: Elevate to Admin
 net session >nul 2>&1
 if %errorLevel% == 0 (
