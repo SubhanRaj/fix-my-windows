@@ -19,8 +19,11 @@ set "TEMP_DIR=%TEMP%\fmw_lhm"
 if exist "%TEMP_DIR%" rmdir /s /q "%TEMP_DIR%" >nul 2>&1
 mkdir "%TEMP_DIR%"
 
-:: The -notmatch 'net[0-9]' filter forces it to download the native Framework build
-powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
+:: The -notmatch 'net\.?[0-9]' filter skips the .NET-runtime-dependent build (which
+:: needs a separate .NET Desktop Runtime install) and keeps the self-contained .NET
+:: Framework build instead - it needs nothing beyond what Windows already ships with.
+:: Matches both old ("net472.zip") and current ("...NET.10.zip") naming.
+powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net\.?[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
 
 if errorlevel 1 (
     echo.
@@ -46,7 +49,8 @@ set "TEMP_DIR=%TEMP%\fmw_lhm"
 if exist "%TEMP_DIR%" rmdir /s /q "%TEMP_DIR%" >nul 2>&1
 mkdir "%TEMP_DIR%"
 
-powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
+:: See :FetchTemp above for why the filter uses 'net\.?[0-9]'.
+powershell -NoProfile -Command "$ErrorActionPreference = 'Stop'; try { $rel = Invoke-RestMethod -Uri 'https://api.github.com/repos/LibreHardwareMonitor/LibreHardwareMonitor/releases/latest'; $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' -and $_.name -notmatch 'net\.?[0-9]' } | Select-Object -First 1; Write-Host '[2/3] Downloading' $asset.name '...'; Invoke-WebRequest -Uri $asset.browser_download_url -OutFile '%TEMP_DIR%\LHM.zip'; Write-Host '[3/3] Extracting...'; Expand-Archive -Path '%TEMP_DIR%\LHM.zip' -DestinationPath '%TEMP_DIR%\Extracted' -Force } catch { Write-Host 'Error:' $_.Exception.Message -ForegroundColor Red; exit 1 }"
 
 if errorlevel 1 (
     echo.

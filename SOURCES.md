@@ -51,7 +51,7 @@ unlabeled.
 
 | Module | Tool | Source |
 |---|---|---|
-| [`29_hardware_monitor.bat`](modules/29_hardware_monitor.bat) | [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) (MPL 2.0) | Downloads the latest release directly from its GitHub Releases API — not a Microsoft product. |
+| [`29_hardware_monitor.bat`](modules/29_hardware_monitor.bat) | [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) (MPL 2.0) | Downloads the latest release directly from its GitHub Releases API — not a Microsoft product. Filters for the self-contained .NET Framework build specifically, so it never needs a separate .NET Desktop Runtime install. |
 
 Windows, DISM, PowerShell, and related marks are trademarks of Microsoft Corporation.
 `fix-my-windows` is an independent, unaffiliated project distributed under the MIT License.
