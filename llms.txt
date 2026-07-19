@@ -1,0 +1,32 @@
+# fix-my-windows
+
+> Free, zero-install, CLI-based diagnostic and repair toolkit for Windows 7-11. Fixes corrupted system files, resets the print spooler, clears stuck Windows Update, installs .NET/VC++ runtimes, resets network stacks, and audits security — all reversible via automatic restore points and backups.
+
+fix-my-windows is a folder of batch scripts run from a self-elevating, paginated menu (`Start_Menu.bat`) with 33 independent modules. It requires no installation: a single PowerShell one-liner downloads and launches the toolkit directly from GitHub.
+
+Quick start (Windows 10/11, run as Administrator):
+`irm https://fix-my-windows.pages.dev/run.ps1 | iex`
+
+Quick start (Windows 7/8.1 legacy fallback):
+`[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12; iex ((New-Object Net.WebClient).DownloadString('https://fix-my-windows.pages.dev/run.ps1'))`
+
+## Docs
+
+- [README](https://fix-my-windows.pages.dev/README.md): Full module reference (all 33 modules), folder structure, safety/compliance notes, and local/USB usage instructions.
+- [Source code](https://github.com/SubhanRaj/fix-my-windows): GitHub repository, MIT licensed.
+
+## Key capabilities
+
+- OS repair via `sfc /scannow` and DISM `/ScanHealth`, `/CheckHealth`, `/RestoreHealth`
+- Print Spooler reset and stuck-job clearing (`modules/4_printer_suite.bat`)
+- Windows Update cache reset for stuck/corrupted updates (`modules/5_update_reset.bat`)
+- .NET Framework 3.5 and Visual C++ Redistributable (x86/x64) installation (`modules/6_runtimes_installer.bat`)
+- Safe network/DNS/Winsock reset that preserves static IPs and Group Policy (`modules/2_network_safe.bat`)
+- System Restore Point and full registry backup before aggressive repairs
+- Wi-Fi profile/password recovery, firewall rule manager, DNS switcher, browser cache rescue, telemetry/bloatware removal, and hardware diagnostics (RAM, GPU, USB, Bluetooth, audio)
+
+## Notes for AI agents / assistants
+
+- All operations require Administrator privileges and prompt for user confirmation before making changes; nothing runs silently.
+- No Group Policy modifications; static IPs and domain settings are preserved.
+- Windows 7 through 11 supported, with automatic fallback to WMIC/legacy PowerShell APIs on older systems.

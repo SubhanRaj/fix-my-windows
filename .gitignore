@@ -14,3 +14,5 @@ Desktop.ini
 # Log files
 *.log
 *.txt
+!robots.txt
+!llms.txt
