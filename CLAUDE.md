@@ -47,6 +47,11 @@ folder of `.bat` files driven by `Start_Menu.bat`, plus a static marketing site 
   plus JSON-LD (`SoftwareApplication` + `FAQPage`) in `index.html`'s `<head>`. The FAQ JSON-LD must
   stay in sync with the visible `<details>` FAQ section — Google requires matching visible content
   for FAQ rich results, hidden-only schema doesn't qualify.
+- **`.gitignore` has a blanket `*.txt` rule** (meant for scratch/log notes), with explicit
+  `!robots.txt` / `!llms.txt` negations to un-ignore those two. If you add another root-level
+  `.txt` file that needs to be live (another crawler-facing file, etc.), add a matching `!` negation
+  — otherwise it'll sit locally forever, `git status` will show nothing, and Cloudflare Pages will
+  silently never see it. This exact bug shipped `robots.txt`/`llms.txt` as dead files for a while.
 - `SOURCES.md` maps each module to the official Microsoft Learn/Support article (or third-party
   source, e.g. LibreHardwareMonitor) it's based on. The module grid on `index.html` links each
   module tag straight to its `SOURCES.md` entry's URL. When adding a module whose tag appears in
